@@ -307,7 +307,7 @@ if(!class_exists('WP_Feature_Box')) {
 		}
 
 		public function get_feature_box_field($id, $field) {
-			return get_field($this->fields_prefix . $field, $id);
+			return wpfbox_get_field($this->fields_prefix . $field, $id);
 		}
 
 		/*
@@ -356,12 +356,12 @@ if(!class_exists('WP_Feature_Box')) {
 
 				$link_group = array();
 
-				$link_group['title'] = get_field($this->fields_prefix . $key . '_title', $id);
+				$link_group['title'] = wpfbox_get_field($this->fields_prefix . $key . '_title', $id);
 				$link_group['links'] = array();
 
 				for($i = 1; $i <= $links_amount; $i++) {
 
-					$link = get_field($this->fields_prefix . $key . '_link_' . $i, $id);
+					$link = wpfbox_get_field($this->fields_prefix . $key . '_link_' . $i, $id);
 					if($link)
 						$link_group['links'][] = $link;
 
